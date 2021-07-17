@@ -26,7 +26,6 @@ declare namespace DarkCord {
         DIRECT_MESSAGES: number;
         DIRECT_MESSAGE_REACTIONS: number;
         DIRECT_MESSAGE_TYPING: number;
-        ALL: number;
     };
     var Collection: typeof import("./src/collection/Collection").default;
     var BitField: typeof import("./src/util/BitField").default;
