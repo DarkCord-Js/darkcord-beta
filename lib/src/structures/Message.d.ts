@@ -1,0 +1,43 @@
+import TextChannel from './channels/TextChannel';
+import Client from '../Client';
+import Guild from './Guild';
+import User from './User';
+import { MessageOptions } from '../types/Interfaces';
+import Embed from './Embed';
+import type Member from './Member';
+declare class Message {
+    private _client;
+    private _id;
+    private _channel;
+    private _guild;
+    private _author;
+    private _member;
+    private _content;
+    private _timestamp;
+    private _editedAt;
+    private _tts;
+    private _mentionedEveryone;
+    private _nonce;
+    private _pinned;
+    private _type;
+    private _embeds;
+    constructor(_client: Client, _id: string, _channel: TextChannel, _guild: Guild | null, _author: User, _member: Member | null, _content: string, _timestamp: Date, _editedAt: Date, _tts: boolean, _mentionedEveryone: boolean, _nonce: number | string, _pinned: boolean, _type: number);
+    get client(): Client;
+    get id(): string;
+    get guild(): Guild | null;
+    get author(): User;
+    get channel(): TextChannel;
+    set embeds(embeds: Embed[]);
+    get content(): string;
+    get member(): Member | null;
+    get timestamp(): Date;
+    get type(): number;
+    get tts(): boolean;
+    get pinned(): boolean;
+    get nonce(): string | number;
+    get mentionedEveryone(): boolean;
+    get editedAt(): Date | null;
+    edit(newContent: string | Embed | MessageOptions): Promise<import("node-fetch").Response>;
+}
+export default Message;
+//# sourceMappingURL=Message.d.ts.map

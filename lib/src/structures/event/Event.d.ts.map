@@ -1,0 +1,1 @@
+{"version":3,"file":"Event.d.ts","sourceRoot":"","sources":["../../../../../lib/src/structures/event/Event.ts"],"names":[],"mappings":"AAAA,OAAO,MAAM,MAAM,cAAc,CAAA;AAEjC,cAAM,KAAK;IAE2C,MAAM,CAAC;IAD3D,OAAO,EAAE;QAAE,IAAI,EAAE,MAAM,CAAA;KAAE,CAAA;gBACZ,YAAY,EAAE;QAAE,IAAI,EAAE,MAAM,CAAA;KAAE,EAAS,MAAM,CAAC,oBAAQ;CAKpE;AAED,eAAe,KAAK,CAAA"}
