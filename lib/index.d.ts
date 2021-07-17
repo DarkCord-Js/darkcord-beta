@@ -61,5 +61,5 @@ declare namespace DarkCord {
         createAnimatedEmojiCode: (emojiName: string, emojiId: string) => string;
     };
 }
-export = DarkCord;
+export default DarkCord;
 //# sourceMappingURL=index.d.ts.map
