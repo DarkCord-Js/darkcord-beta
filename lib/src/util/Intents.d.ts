@@ -1,4 +1,4 @@
-declare const _default: {
+declare const Intents: {
     GUILDS: number;
     GUILD_MEMBERS: number;
     GUILD_BANS: number;
@@ -14,6 +14,7 @@ declare const _default: {
     DIRECT_MESSAGES: number;
     DIRECT_MESSAGE_REACTIONS: number;
     DIRECT_MESSAGE_TYPING: number;
+    ALL: number;
 };
-export default _default;
+export default Intents;
 //# sourceMappingURL=Intents.d.ts.map
