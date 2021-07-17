@@ -2,7 +2,7 @@
   "name": "darkcord-nodejs",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.test.js",
+  "main": "index.js",
   "scripts": {
     "dev": "rm -r dist && yarn dev:babel && yarn dev:declare && node .",
     "dev:declare": "tsc --emitDeclarationOnly",
