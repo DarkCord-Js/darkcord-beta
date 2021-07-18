@@ -1,8 +1,8 @@
 {
   "name": "darkcord.js",
   "version": "1.0.0",
-  "description": "",
-  "main": "lib/index.js",
+  "description": "A TypesSript NodeJs wrapper for interfacing with Discord API.",
+  "main": "index.js",
   "scripts": {
     "dev": "rm -r dist && yarn dev:babel && yarn dev:declare && node .",
     "dev:declare": "tsc --emitDeclarationOnly",
