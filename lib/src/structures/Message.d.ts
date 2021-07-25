@@ -1,5 +1,5 @@
 import TextChannel from './channels/TextChannel';
-import Client from '../Client';
+import Bot from '../Bot';
 import Guild from './Guild';
 import User from './User';
 import { MessageOptions } from '../types/Interfaces';
@@ -21,8 +21,8 @@ declare class Message {
     private _pinned;
     private _type;
     private _embeds;
-    constructor(_client: Client, _id: string, _channel: TextChannel, _guild: Guild | null, _author: User, _member: Member | null, _content: string, _timestamp: Date, _editedAt: Date, _tts: boolean, _mentionedEveryone: boolean, _nonce: number | string, _pinned: boolean, _type: number);
-    get client(): Client;
+    constructor(_client: Bot, _id: string, _channel: TextChannel, _guild: Guild | null, _author: User, _member: Member | null, _content: string, _timestamp: Date, _editedAt: Date, _tts: boolean, _mentionedEveryone: boolean, _nonce: number | string, _pinned: boolean, _type: number);
+    get client(): Bot;
     get id(): string;
     get guild(): Guild | null;
     get author(): User;
@@ -37,7 +37,7 @@ declare class Message {
     get nonce(): string | number;
     get mentionedEveryone(): boolean;
     get editedAt(): Date | null;
-    edit(newContent: string | Embed | MessageOptions): Promise<import("node-fetch").Response>;
+    edit(newContent: string | Embed | MessageOptions): Promise<any>;
 }
 export default Message;
 //# sourceMappingURL=Message.d.ts.map

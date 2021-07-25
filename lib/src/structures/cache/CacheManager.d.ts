@@ -1,8 +1,8 @@
-import type Client from '../../Client';
+import type Bot from '../../Bot';
 import { CacheTypes } from '../../types/Types';
 declare class CacheManager {
-    client: Client;
-    constructor(client: Client);
+    client: Bot;
+    constructor(client: Bot);
     manage(type: CacheTypes, key: string, value: any): boolean;
 }
 export default CacheManager;

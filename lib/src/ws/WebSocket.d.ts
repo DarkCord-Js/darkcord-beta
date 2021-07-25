@@ -1,11 +1,11 @@
 /// <reference types="node" />
 import EventEmitter from 'events';
-import Client from '../Client';
+import Bot from '../Bot';
 /** DarkCord WebSocket Manager */
 declare class WsManager extends EventEmitter {
     private client;
     private shards;
-    constructor(client: Client);
+    constructor(client: Bot);
     /** Spawn Shards */
     connect(shards: number): Promise<void>;
 }

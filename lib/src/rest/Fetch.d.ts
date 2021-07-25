@@ -1,4 +1,7 @@
+import Bot from '../Bot';
 declare class Fetch {
+    client: Bot;
+    constructor(client: Bot);
     user(id: string): Promise<any>;
     message(channelId: string, messageId: string): Promise<any>;
     member(guildId: string, memberId: string): Promise<any>;

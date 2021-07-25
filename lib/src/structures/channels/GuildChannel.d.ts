@@ -1,4 +1,4 @@
-import type Client from '../../Client';
+import type Bot from '../../Bot';
 import type Guild from '../Guild';
 import type { ChannelTypeDef } from '../../types/Types';
 import BaseChannel from './BaseChannel';
@@ -12,7 +12,7 @@ declare class GuildChannel extends BaseChannel {
     private _permissionOverwrites;
     private _nsfw;
     private _rateLimitPerUser;
-    constructor(_id: string, _client: Client, _type: ChannelTypeDef, _name: string, _lastMessageId: string, _lastPinTimestamp: Date, _position: number, _parentId: string, _topic: string, _guild: Guild, _permissionOverwrites: any[], _nsfw: boolean, _rateLimitPerUser: number);
+    constructor(_id: string, _client: Bot, _type: ChannelTypeDef, _name: string, _lastMessageId: string, _lastPinTimestamp: Date, _position: number, _parentId: string, _topic: string, _guild: Guild, _permissionOverwrites: any[], _nsfw: boolean, _rateLimitPerUser: number);
     get lastPinTimestamp(): Date;
     get position(): number;
     get parentId(): string;
@@ -21,6 +21,11 @@ declare class GuildChannel extends BaseChannel {
     get nsfw(): boolean;
     get permissionOverwrites(): any[];
     get lastMessageId(): string;
+    get rateLimitPerUser(): number;
+    set rateLimitPerUser(rate: number);
+    delete(timeout?: {
+        timeout: number;
+    }): Promise<void>;
 }
 export default GuildChannel;
 //# sourceMappingURL=GuildChannel.d.ts.map

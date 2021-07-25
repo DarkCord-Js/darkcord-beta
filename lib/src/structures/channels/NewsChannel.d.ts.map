@@ -1,0 +1,1 @@
+{"version":3,"file":"NewsChannel.d.ts","sourceRoot":"","sources":["../../../../../lib/src/structures/channels/NewsChannel.ts"],"names":[],"mappings":"AACA,OAAO,YAAY,MAAM,gBAAgB,CAAA;AACzC,OAAO,WAAW,MAAM,eAAe,CAAA;AAEvC,cAAM,WAAY,SAAQ,WAAW;IAC7B,WAAW,CAAE,OAAO,EAAE,YAAY,GAAG,WAAW,EAAE,MAAM,CAAC,EAAE,MAAM;CAMxE;AAED,eAAe,WAAW,CAAA"}

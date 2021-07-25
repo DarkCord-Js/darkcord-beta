@@ -1,6 +1,9 @@
 /// <reference types="node" />
 export declare const headers: {
     'Content-Type': string;
+    'User-Agent': string;
+    'Accept-Encoding': string;
+    'X-RateLimit-Precision': string;
     Authorization: string;
 };
 export declare const HeartBeat: {

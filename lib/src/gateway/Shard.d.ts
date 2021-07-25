@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { EventEmitter } from 'events';
-import Client from '../Client';
+import Bot from '../Bot';
 declare class Shard extends EventEmitter {
     id: string;
     private client;
@@ -10,7 +10,7 @@ declare class Shard extends EventEmitter {
     private token;
     private lastHeartBeatReceived;
     private lastHeartBeatSent;
-    constructor(id: string, client: Client);
+    constructor(id: string, client: Bot);
     connect(token?: string): Promise<void>;
     updateStatus(afk: boolean, game: string, since: number, status: string): void;
     private identify;

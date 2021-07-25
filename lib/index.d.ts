@@ -1,16 +1,36 @@
-import Client from './src/Client';
-import type { ClientOptions } from './src/types/Interfaces';
-import WsManager from './src/ws/WebSocket';
-import RestAPI from './src/rest/RestAPI';
-/** DarkCord Function
- * @param options Client options
- * @returns DarkCord Client
- */
-declare function DarkCord(options?: ClientOptions): Client;
-declare namespace DarkCord {
-    var Client: typeof import("./src/Client").default;
-    var Constants: typeof import("./src/constants/Constants");
-    var Intents: {
+import Bot from './src/Bot';
+import * as Constants from './src/constants/Constants';
+import Collection from './src/collection/Collection';
+import BitField from './src/util/BitField';
+import Role from './src/structures/Role';
+import Member from './src/structures/Member';
+import User from './src/structures/User';
+import Resolve from './src/util/Resolve';
+import Embed from './src/structures/Embed';
+import Message from './src/structures/Message';
+import Guild from './src/structures/Guild';
+import TextChannel from './src/structures/channels/TextChannel';
+import Emoji from './src/structures/Emoji';
+import BaseChannel from './src/structures/channels/BaseChannel';
+import GuildChannel from './src/structures/channels/GuildChannel';
+import Shard from './src/gateway/Shard';
+import ShardManager from './src/gateway/ShardManager';
+import DMChannel from './src/structures/channels/DMChannel';
+import CacheManager from './src/managers/CacheManager';
+import WebSocket from './src/ws/WebSocket';
+import Rest from './src/rest/RestAPI';
+import Reaction from './src/structures/Reaction';
+import Command from './src/structures/command/Command';
+import CommandContext from './src/structures/command/CommandContext';
+import BotUser from './src/BotUser';
+import Button from './src/structures/Button';
+import Components from './src/structures/Components';
+import SelectMenu from './src/structures/SelectMenu';
+declare const _default: {
+    Bot: typeof Bot;
+    WebSocket: typeof WebSocket;
+    Constants: typeof Constants;
+    Intents: {
         GUILDS: number;
         GUILD_MEMBERS: number;
         GUILD_BANS: number;
@@ -28,30 +48,29 @@ declare namespace DarkCord {
         DIRECT_MESSAGE_TYPING: number;
         ALL: number;
     };
-    var Collection: typeof import("./src/collection/Collection").default;
-    var BitField: typeof import("./src/util/BitField").default;
-    var Role: typeof import("./src/structures/Role").default;
-    var Member: typeof import("./src/structures/Member").default;
-    var User: typeof import("./src/structures/User").default;
-    var Resolve: typeof import("./src/util/Resolve").default;
-    var Embed: typeof import("./src/structures/Embed").default;
-    var Message: typeof import("./src/structures/Message").default;
-    var Guild: typeof import("./src/structures/Guild").default;
-    var TextChannel: typeof import("./src/structures/channels/TextChannel").default;
-    var BaseChannel: typeof import("./src/structures/channels/BaseChannel").default;
-    var GuildChannel: typeof import("./src/structures/channels/GuildChannel").default;
-    var DMChannel: typeof import("./src/structures/channels/DMChannel").default;
-    var Emoji: typeof import("./src/structures/Emoji").default;
-    var Shard: typeof import("./src/gateway/Shard").default;
-    var ShardManager: typeof import("./src/gateway/ShardManager").default;
-    var CacheManager: typeof import("./src/structures/cache/CacheManager").default;
-    var WebSocket: typeof WsManager;
-    var Rest: typeof RestAPI;
-    var Reaction: typeof import("./src/structures/Reaction").default;
-    var Command: typeof import("./src/structures/command/Command").default;
-    var CommandContext: typeof import("./src/structures/command/CommandContext").default;
-    var ClientUser: typeof import("./src/ClientUser").default;
-    var Format: {
+    Collection: typeof Collection;
+    BitField: typeof BitField;
+    Role: typeof Role;
+    Member: typeof Member;
+    User: typeof User;
+    Resolve: typeof Resolve;
+    Embed: typeof Embed;
+    Message: typeof Message;
+    Guild: typeof Guild;
+    TextChannel: typeof TextChannel;
+    BaseChannel: typeof BaseChannel;
+    GuildChannel: typeof GuildChannel;
+    DMChannel: typeof DMChannel;
+    Emoji: typeof Emoji;
+    Shard: typeof Shard;
+    ShardManager: typeof ShardManager;
+    CacheManager: typeof CacheManager;
+    Rest: typeof Rest;
+    Reaction: typeof Reaction;
+    Command: typeof Command;
+    CommandContext: typeof CommandContext;
+    BotUser: typeof BotUser;
+    Format: {
         createTimestamp: (time: number) => string;
         createStyledTimestamp: (time: number, style: import("./src/types/Types").StyleTimestamp) => string;
         createUserMention: (userId: string) => string;
@@ -60,6 +79,9 @@ declare namespace DarkCord {
         createEmojiCode: (emojiName: string, emojiId: string) => string;
         createAnimatedEmojiCode: (emojiName: string, emojiId: string) => string;
     };
-}
-export default DarkCord;
+    Button: typeof Button;
+    Components: typeof Components;
+    SelectMenu: typeof SelectMenu;
+};
+export default _default;
 //# sourceMappingURL=index.d.ts.map

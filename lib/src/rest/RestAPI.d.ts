@@ -1,15 +1,20 @@
-import type Client from '../Client';
-import type { MessageOptions } from '../types/Interfaces';
+import type Bot from '../Bot';
+import type { API_ChannelCreate, MessageOptions } from '../types/Interfaces';
 import Fetch from './Fetch';
 declare class RestAPI {
     private client;
     private _token;
     fetch: Fetch;
-    constructor(client: Client);
+    private requestHandler;
+    constructor(client: Bot);
     createMessage(options: MessageOptions, id: string): Promise<any>;
-    deleteMessage(channelId: string, messageId: string): Promise<import("node-fetch").Response>;
-    editMessage(options: MessageOptions, channelId: string, messageId: string): Promise<import("node-fetch").Response>;
-    banMember(guildId: string, memberId: string, days: number, reason?: string): Promise<import("node-fetch").Response>;
+    deleteMessage(channelId: string, messageId: string): Promise<any>;
+    createChannel(guildId: string, options: API_ChannelCreate): Promise<any>;
+    deleteChannel(channelId: string, reason: string): Promise<any>;
+    editMessage(options: MessageOptions, channelId: string, messageId: string): Promise<any>;
+    createGuildEmoji(guildId: string, options: API_ChannelCreate): Promise<any>;
+    deleteGuildEmoji(guildId: string, emojiId: string, reason: string): Promise<any>;
+    banMember(guildId: string, memberId: string, days: number, reason?: string): Promise<any>;
     set token(token: string);
 }
 export default RestAPI;

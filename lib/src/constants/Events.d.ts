@@ -12,6 +12,8 @@ export declare enum Events {
     GUILD_DELETE = "guildDelete",
     GUILD_UPDATE = "guildUpdate",
     GUILD_BAN_ADD = "guildBan",
-    GUILD_BAN_REMOVE = "guildBanRemove"
+    GUILD_BAN_REMOVE = "guildBanRemove",
+    HELLO = "hello",
+    INTERACTION_CREATE = "interaction"
 }
 //# sourceMappingURL=Events.d.ts.map

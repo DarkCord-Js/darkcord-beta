@@ -1,4 +1,4 @@
-import Client from '../Client';
+import Bot from '../Bot';
 import { ImageFormat } from '../types/Types';
 import User from './User';
 declare class Member {
@@ -12,7 +12,7 @@ declare class Member {
     private _muted;
     private _avatar;
     private _guildId;
-    constructor(_id: string, client: Client, _user: User, _nickname: string, _joinedDate: Date, _boosterSince: Date, _deaf: boolean, _muted: boolean, _avatar: string, _guildId: string);
+    constructor(_id: string, client: Bot, _user: User, _nickname: string, _joinedDate: Date, _boosterSince: Date, _deaf: boolean, _muted: boolean, _avatar: string, _guildId: string);
     get mention(): string;
     get id(): string;
     get nickname(): string;
@@ -22,7 +22,7 @@ declare class Member {
     get muted(): boolean;
     get user(): User;
     get avatar(): string;
-    ban(reason?: string, days?: number): Promise<import("node-fetch").Response>;
+    ban(reason?: string, days?: number): Promise<any>;
     avatarURL({ format, dynamic, size }: {
         format: ImageFormat;
         dynamic: boolean;

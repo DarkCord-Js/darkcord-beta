@@ -1,0 +1,1 @@
+{"version":3,"file":"CacheManager.d.ts","sourceRoot":"","sources":["../../../../lib/src/managers/CacheManager.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,GAAG,MAAM,QAAQ,CAAA;AAC7B,OAAO,EAAE,UAAU,EAAE,MAAM,gBAAgB,CAAA;AAE3C,cAAM,YAAY;IACI,MAAM,EAAE,GAAG;gBAAX,MAAM,EAAE,GAAG;IAE/B,MAAM,CAAE,IAAI,EAAE,UAAU,EAAE,GAAG,EAAE,MAAM,EAAE,KAAK,EAAE,GAAG;CAQlD;AAED,eAAe,YAAY,CAAA"}

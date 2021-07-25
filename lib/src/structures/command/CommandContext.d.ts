@@ -1,12 +1,12 @@
-import Client from '../../Client';
+import Bot from '../../Bot';
 import { MessageContent } from '../../types/Types';
 import type Message from '../Message';
 declare class CommandContext {
     private _message;
     private _client?;
-    constructor(_message: Message, _client?: Client | undefined);
-    /** DarkCord Client */
-    get client(): Client | undefined;
+    constructor(_message: Message, _client?: Bot | undefined);
+    /** DarkCord Bot */
+    get client(): Bot | undefined;
     /** Get command Message */
     get message(): Message;
     /** Get command Channel */
