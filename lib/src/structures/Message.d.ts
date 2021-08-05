@@ -5,8 +5,9 @@ import User from './User';
 import { MessageOptions } from '../types/Interfaces';
 import Embed from './Embed';
 import type Member from './Member';
+import { MessageContent } from '../types/Types';
 declare class Message {
-    private _client;
+    private _bot;
     private _id;
     private _channel;
     private _guild;
@@ -21,8 +22,8 @@ declare class Message {
     private _pinned;
     private _type;
     private _embeds;
-    constructor(_client: Bot, _id: string, _channel: TextChannel, _guild: Guild | null, _author: User, _member: Member | null, _content: string, _timestamp: Date, _editedAt: Date, _tts: boolean, _mentionedEveryone: boolean, _nonce: number | string, _pinned: boolean, _type: number);
-    get client(): Bot;
+    constructor(_bot: Bot, _id: string, _channel: TextChannel, _guild: Guild | null, _author: User, _member: Member | null, _content: string, _timestamp: Date, _editedAt: Date, _tts: boolean, _mentionedEveryone: boolean, _nonce: number | string, _pinned: boolean, _type: number);
+    get bot(): Bot;
     get id(): string;
     get guild(): Guild | null;
     get author(): User;
@@ -30,13 +31,14 @@ declare class Message {
     set embeds(embeds: Embed[]);
     get content(): string;
     get member(): Member | null;
-    get timestamp(): Date;
+    get timestamp(): number;
     get type(): number;
     get tts(): boolean;
     get pinned(): boolean;
     get nonce(): string | number;
     get mentionedEveryone(): boolean;
     get editedAt(): Date | null;
+    reply(content: MessageContent, allowMention?: boolean): Promise<Message | null>;
     edit(newContent: string | Embed | MessageOptions): Promise<any>;
 }
 export default Message;

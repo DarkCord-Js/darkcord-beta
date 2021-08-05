@@ -1,13 +1,13 @@
 import Bot from '../../Bot';
 import { ChannelTypeDef } from '../../types/Types';
 declare class BaseChannel {
-    protected _client: Bot;
+    protected _bot: Bot;
     private _id;
     private _name;
     private _type;
-    constructor(_client: Bot, _id: string, _name: string, _type: ChannelTypeDef);
+    constructor(_bot: Bot, _id: string, _name: string, _type: ChannelTypeDef);
     get name(): string;
-    get client(): Bot;
+    get bot(): Bot;
     get type(): ChannelTypeDef;
     get id(): string;
 }

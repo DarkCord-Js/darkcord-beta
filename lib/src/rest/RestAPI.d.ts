@@ -1,12 +1,13 @@
 import type Bot from '../Bot';
 import type { API_ChannelCreate, MessageOptions } from '../types/Interfaces';
 import Fetch from './Fetch';
+import Webhook from '../WebHook';
 declare class RestAPI {
-    private client;
+    private bot;
     private _token;
     fetch: Fetch;
     private requestHandler;
-    constructor(client: Bot);
+    constructor(bot: Bot | Webhook);
     createMessage(options: MessageOptions, id: string): Promise<any>;
     deleteMessage(channelId: string, messageId: string): Promise<any>;
     createChannel(guildId: string, options: API_ChannelCreate): Promise<any>;

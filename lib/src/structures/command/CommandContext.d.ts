@@ -3,10 +3,10 @@ import { MessageContent } from '../../types/Types';
 import type Message from '../Message';
 declare class CommandContext {
     private _message;
-    private _client?;
-    constructor(_message: Message, _client?: Bot | undefined);
+    private _bot?;
+    constructor(_message: Message, _bot?: Bot | undefined);
     /** DarkCord Bot */
-    get client(): Bot | undefined;
+    get bot(): Bot | undefined;
     /** Get command Message */
     get message(): Message;
     /** Get command Channel */

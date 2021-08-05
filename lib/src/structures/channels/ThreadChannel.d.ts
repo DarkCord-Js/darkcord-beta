@@ -14,7 +14,7 @@ interface editOptions {
 declare class ThreadChannel extends GuildChannel {
     private _threadMetadata;
     members: Collection<string, Member>;
-    constructor(_id: string, _client: Bot, _type: ChannelTypeDef, _name: string, _lastMessageId: string, _lastPinTimestamp: Date, _position: number, _parentId: string, _topic: string, _guild: Guild, _permissionOverwrites: any[], _nsfw: boolean, _rateLimitPerUser: number, _threadMetadata: any);
+    constructor(_id: string, _bot: Bot, _type: ChannelTypeDef, _name: string, _lastMessageId: string, _lastPinTimestamp: Date, _position: number, _parentId: string, _topic: string, _guild: Guild, _permissionOverwrites: any[], _nsfw: boolean, _rateLimitPerUser: number, _threadMetadata: any);
     get metadata(): {
         archived: any;
         autoArchiveDuration: any;

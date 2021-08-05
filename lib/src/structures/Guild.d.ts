@@ -1,12 +1,15 @@
 import Collection from '../collection/Collection';
 import type Role from './Role';
-import type Member from './Member';
+import Member from './Member';
 import type Emoji from './Emoji';
 import GuildChannel from './channels/GuildChannel';
 import type Bot from '../Bot';
+import VoiceState from './VoiceState';
+import { snowflake } from '../types/Types';
+import Permissions from '../util/Permissions';
 declare class Guild {
     private _id;
-    private _client;
+    private _bot;
     private _name;
     private _icon;
     private _description;
@@ -46,7 +49,9 @@ declare class Guild {
     private _members;
     private _emojis;
     private _channels;
-    constructor(_id: string, _client: Bot, _name: string, _icon: string, _description: string, _splash: string, _discoverySplash: string, _features: any[], _banner: string, _ownerId: string, _applicationId: string, _region: string, _afkChannelId: string, _afkTimeout: string, _systemChannelId: string, _widgetEnabled: boolean, _widgetChannelId: string, _verificationLevel: number, _defaultMessageNotifications: number, _mfaLevel: number, _explicitContentFilter: number, _maxPresences: number, _maxMembers: number, _maxVideoChannelUsers: number, _vanityUrl: string, _premiumTier: number, _premiumSubscriptionCount: number, _systemChannelFlags: number, _preferredLocale: string, _rulesChannelId: string, _publicUpdatesChannelId: string, _embedEnabled: boolean, _embedChannelId: string, _stickers: any[], _nsfw_level: number, _memberCount: number, _presenceCount: number);
+    private _voiceStates;
+    constructor(_id: string, _bot: Bot, _name: string, _icon: string, _description: string, _splash: string, _discoverySplash: string, _features: any[], _banner: string, _ownerId: string, _applicationId: string, _region: string, _afkChannelId: string, _afkTimeout: string, _systemChannelId: string, _widgetEnabled: boolean, _widgetChannelId: string, _verificationLevel: number, _defaultMessageNotifications: number, _mfaLevel: number, _explicitContentFilter: number, _maxPresences: number, _maxMembers: number, _maxVideoChannelUsers: number, _vanityUrl: string, _premiumTier: number, _premiumSubscriptionCount: number, _systemChannelFlags: number, _preferredLocale: string, _rulesChannelId: string, _publicUpdatesChannelId: string, _embedEnabled: boolean, _embedChannelId: string, _stickers: any[], _nsfw_level: number, _memberCount: number, _presenceCount: number);
+    get shard(): import("../gateway/Shard").default | undefined;
     get roles(): Collection<string, Role>;
     set roles(roles: Collection<string, Role>);
     get emojis(): Collection<string, Emoji>;
@@ -79,11 +84,13 @@ declare class Guild {
     get boosterTier(): number;
     get applicationId(): string;
     get memberCount(): number;
-    get client(): Bot;
+    get bot(): Bot;
     get rulesChannelId(): string;
     get features(): any[];
-    get ownerId(): string;
-    get owner(): Member | any;
+    get voiceStates(): Collection<string, VoiceState>;
+    get ownerId(): snowflake;
+    permissionsOf(member: snowflake | Member): Permissions;
+    get owner(): Member | undefined;
     rulesChannel(): Promise<GuildChannel>;
 }
 export default Guild;

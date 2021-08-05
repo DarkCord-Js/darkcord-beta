@@ -6,7 +6,7 @@ declare class Command {
     options: CommandOptions;
     static createContext: (obj: {
         message: Message;
-        client?: Bot | undefined;
+        bot?: Bot | undefined;
     }) => CommandContext;
     constructor(CommandOptions: CommandOptions);
     execute(ctx: CommandContext, args?: string[]): void;

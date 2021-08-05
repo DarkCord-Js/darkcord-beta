@@ -15,7 +15,10 @@ export declare enum EndPoints {
     followers = "followers",
     thread_members = "thread-members",
     interactions = "interactions",
-    callback = "callback"
+    callback = "callback",
+    applications = "applications",
+    commands = "commands",
+    invites = "invites"
 }
 export declare enum StatusCode {
     ok = 200,

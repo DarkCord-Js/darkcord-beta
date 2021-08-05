@@ -1,4 +1,6 @@
+import { Events } from '../constants/Events';
 import type Embed from '../structures/Embed';
+import Intents from '../util/Intents';
 import type { MessageOptions } from './Interfaces';
 export declare type bit = string | number | bigint | object | any[];
 export declare type image = {
@@ -33,13 +35,15 @@ export declare type footer = {
     text: string;
     iconURL?: string;
 } | null;
-export declare type EventNoResolvable = 'DEBUG' | 'READY' | 'MESSAGE_CREATE' | 'MESSAGE_REACTION_ADD' | 'MESSAGE_REACTION_REMOVE' | 'HELLO' | 'GUILD_BAN_ADD' | 'GUILD_BAN_REMOVE' | 'GUILD_CREATE' | 'GUILD_DELETE' | 'SHARD_READY' | 'INTERACTION_CREATE';
+export declare type EventNoResolvable = keyof (typeof Events);
 export declare type EventResolvable = 'ready' | 'message' | 'reaction' | 'reactionRemove' | 'hello' | 'interaction' | 'guildCreate' | 'guildDelete' | 'guildBan' | 'messageUpdate' | 'guildBanRemove';
-export declare type IntentsType = 'GUILDS' | 'GUILD_MEMBERS' | 'GUILD_BANS' | 'GUILD_EMOJIS' | 'GUILD_INTEGRATIONS' | 'GUILD_WEBHOOKS' | 'GUILD_INVITES' | 'GUILD_VOICE_STATES' | 'GUILD_PRESENCES' | 'GUILD_MESSAGES' | 'GUILD_MESSAGE_REACTIONS' | 'GUILD_MESSAGE_TYPING' | 'DIRECT_MESSAGES' | 'DIRECT_MESSAGE_REACTIONS' | 'DIRECT_MESSAGE_TYPING' | 'ALL';
+export declare type IntentsType = keyof (typeof Intents);
 export declare type ImageFormat = 'png' | 'jpeg' | 'jpg' | 'webp' | 'gif';
 export declare type CacheTypes = 'channels' | 'users' | 'guilds' | 'emojis';
 export declare type MessageContent = string | MessageOptions | Embed;
 export declare type StyleTimestamp = 't' | 'T' | 'd' | 'D' | 'f' | 'F' | 'R';
+export declare type snowflake = `${number}` | string;
+export declare type requestTypes = 'PATCH' | 'POST' | 'PUT' | 'DELETE' | 'GET' | 'HEAD';
 export declare enum ChannelType {
     TEXT = 0,
     DM = 1,

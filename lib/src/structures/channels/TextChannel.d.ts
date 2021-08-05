@@ -8,10 +8,10 @@ import Message from '../Message';
 declare class TextChannel extends GuildChannel implements TextBasedChannel {
     private _messages;
     private resolve;
-    _client: Bot;
-    constructor(_id: string, _client: Bot, _type: ChannelTypeDef, _lastMessageId: string, _lastPinTimestamp: Date, _name: string, _position: number, _parentId: string, _topic: string, _guild: Guild, _permissionOverwrites: any[], _nsfw: boolean, _rateLimitPerUser: number);
+    _bot: Bot;
+    constructor(_id: string, _bot: Bot, _type: ChannelTypeDef, _lastMessageId: string, _lastPinTimestamp: Date, _name: string, _position: number, _parentId: string, _topic: string, _guild: Guild, _permissionOverwrites: any[], _nsfw: boolean, _rateLimitPerUser: number);
     get messages(): Collection<string, Message>;
-    get client(): Bot;
+    get bot(): Bot;
     sendMessage(content: MessageContent): Promise<Message | null>;
 }
 export default TextChannel;

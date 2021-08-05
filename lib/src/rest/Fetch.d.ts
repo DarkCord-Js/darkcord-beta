@@ -1,7 +1,8 @@
 import Bot from '../Bot';
+import Webhook from '../WebHook';
 declare class Fetch {
-    client: Bot;
-    constructor(client: Bot);
+    bot: Bot | Webhook;
+    constructor(bot: Bot | Webhook);
     user(id: string): Promise<any>;
     message(channelId: string, messageId: string): Promise<any>;
     member(guildId: string, memberId: string): Promise<any>;

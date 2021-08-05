@@ -8,7 +8,7 @@ import Member from './Member';
 import Message from './Message';
 import User from './User';
 declare class Interaction {
-    private client;
+    private bot;
     token: string;
     version: number;
     private _id;
@@ -20,7 +20,8 @@ declare class Interaction {
     private _member;
     private _user;
     private _message;
-    constructor(client: Bot, token: string, version: number, _id: string, _application_id: string, _type: InteractionType, _guild: Guild, _channel: GuildChannel | TextChannel, _data: any | null, _member: Member | null, _user: User | null, _message: Message | null);
+    timestamp: number;
+    constructor(bot: Bot, token: string, version: number, _id: string, _application_id: string, _type: InteractionType, _guild: Guild, _channel: GuildChannel | TextChannel, _data: any | null, _member: Member | null, _user: User | null, _message: Message | null);
     get guild(): Guild;
     get id(): string;
     get message(): Message | null;

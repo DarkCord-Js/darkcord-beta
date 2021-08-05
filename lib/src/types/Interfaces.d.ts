@@ -6,7 +6,7 @@ import type Message from '../structures/Message';
 export interface Plugin {
     name: string;
     description: string;
-    type: 'client' | 'common';
+    type: 'bot' | 'common';
     startOnReady: boolean;
     exec: (...args: any[]) => void;
 }
@@ -88,6 +88,7 @@ export interface API_Member {
     muted: boolean;
     user: API_User;
     avatar: string;
+    roles: any[];
 }
 export interface API_Role {
     id: string;
@@ -95,9 +96,10 @@ export interface API_Role {
     color: number;
     hoist: boolean;
     position: number;
-    permissions: number;
+    permissions: string;
     managed: boolean;
     mentionable: boolean;
+    permissions_new: string | null;
 }
 export interface Partial_Emoji {
     id: string;
@@ -159,6 +161,34 @@ export interface MessageOptions {
     embeds?: any[];
     tts?: boolean;
     components?: any[];
+    file?: any;
+    messageReference?: {
+        channelId: string;
+        messageId: string;
+        guildId?: string;
+    };
+    allowedMentions?: {
+        roles?: boolean;
+        users?: boolean;
+        repliedUser?: boolean;
+    };
+}
+export interface LavaLinkOptions {
+    plugis?: any[];
+    autoPlay?: boolean;
+    identifier?: string;
+    retryDelay?: number;
+    clientName?: string;
+    clientId?: string;
+    requestTimeout?: number;
+    retryAmount?: number;
+    secure?: boolean;
+}
+export interface CreateInviteOptions {
+    maxAge?: number;
+    maxUses?: number;
+    temporary?: boolean;
+    unique?: boolean;
 }
 export interface TextBasedChannel {
     sendMessage(content: string | MessageOptions): any;
@@ -233,5 +263,17 @@ export interface SelectMenuOptions {
     description?: string;
     emoji?: Partial_Emoji;
     default?: boolean;
+}
+export interface SlashCommandChoice {
+    name: string;
+    value: string;
+}
+export interface SlashCommandOptions {
+    type?: number;
+    name: string;
+    description: string;
+    required?: boolean;
+    choices?: SlashCommandChoice[];
+    options?: SlashCommandOptions[];
 }
 //# sourceMappingURL=Interfaces.d.ts.map

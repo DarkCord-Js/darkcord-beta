@@ -6,7 +6,7 @@ import type Message from '../Message';
 declare class DMChannel extends BaseChannel {
     private _messages;
     private resolve;
-    constructor(_id: string, _client: Bot, _type: ChannelTypeDef, _lastMessageId: string, _lastPinTimestamp: Date, _name: string, _position: number);
+    constructor(_id: string, _bot: Bot, _type: ChannelTypeDef, _lastMessageId: string, _lastPinTimestamp: Date, _name: string, _position: number);
     get messages(): Collection<string, Message>;
     sendMessage(content: MessageContent): Promise<Message | null>;
 }

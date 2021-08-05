@@ -13,13 +13,17 @@ import Reaction from '../structures/Reaction';
 import ThreadChannel from '../structures/channels/ThreadChannel';
 import Interaction from '../structures/Interaction';
 import CategoryChannel from '../structures/channels/CategoryChannel';
+import Invite from '../structures/Invite';
+import VoiceChannel from '../structures/channels/VoiceChannel';
+import VoiceState from '../structures/VoiceState';
 declare class Resolve {
-    private client;
+    private bot;
     private cache;
-    constructor(client: Bot);
+    constructor(bot: Bot);
     resolveUser(user: API_User): User;
     resolveEmoji(emoji: any): Emoji;
     resolveMember(member: API_Member, guildId: string): Member;
+    resolveInvite(invite: any): Invite;
     resolveRole(role: API_Role): Role;
     resolveGuild(guild: any): Guild;
     resolveTextChannel(channel: any): Promise<TextChannel>;
@@ -27,10 +31,12 @@ declare class Resolve {
     resolveReaction(reaction: any): Promise<Reaction>;
     resolveCategoryChannel(channel: any): Promise<CategoryChannel>;
     resolveNewsChannel(channel: any): Promise<TextChannel>;
-    resolveChannel(channel: any): Promise<TextChannel | CategoryChannel | null>;
+    resolveVoiceChannel(channel: any): Promise<VoiceChannel>;
+    resolveVoiceState(voiceState: any): Promise<VoiceState>;
+    resolveChannel(channel: any): Promise<TextChannel | CategoryChannel | VoiceChannel | null>;
     resolveInteraction(interaction: any): Promise<Interaction>;
     resolveMessage(message: any): Promise<Message | null>;
-    resolveMessageInstance(message: any, client: Bot, channel: TextChannel, guild: Guild, user: User, member: Member | null): Message;
+    resolveMessageInstance(message: any, bot: Bot, channel: TextChannel, guild: Guild, user: User, member: Member | null): Message;
 }
 export declare function getChannelType(type: number): ChannelType;
 export declare function getChannelTypeDef(type: number): ChannelTypeDef.TEXT | ChannelTypeDef.DM | ChannelTypeDef.VOICE | ChannelTypeDef.CATEGORY | ChannelTypeDef.NEWS | ChannelTypeDef.STORE | ChannelTypeDef.UNKNOWN;

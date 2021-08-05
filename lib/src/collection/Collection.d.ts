@@ -1,13 +1,9 @@
 declare class Collection<K, V> extends Map<K, V> {
-    private baseObject?;
-    private limit?;
-    constructor(baseObject?: any, limit?: number | undefined);
-    map(func: Function): any[];
-    filter(func: Function): any[];
-    find(func: Function): any[];
-    random(): any[];
-    add(obj: Record<any, any> | any, extra?: any, replace?: any): any;
-    update(obj: Record<any, any> | any, extra?: any, replace?: any): any;
+    constructor();
+    map(func: (value: V) => any): V[];
+    filter(func: (value: V) => any): V[];
+    find(func: (value: V) => any): V[];
+    random(): V[];
     every(func: Function): boolean;
     some(func: Function): boolean;
     remove(obj: Record<any, any>): V | null;
